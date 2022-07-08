@@ -6,6 +6,6 @@ const authRouter= Router ()
 
 authRouter.post("/cadastro",registerUser);
 
-// router.post("/login", validateLogin,loginUser);
+// router.post("/login", validateLogin,loginUser);a
 
 export default authRouter;
