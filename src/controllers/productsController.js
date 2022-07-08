@@ -1,4 +1,4 @@
-import db from '../db.js';
+import db from '../db/db.js';
 
 export async function productList(req, res){
     try{
