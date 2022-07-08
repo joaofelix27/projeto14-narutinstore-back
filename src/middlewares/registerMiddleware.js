@@ -1,4 +1,4 @@
-import registerSchema from "../schemas/registerSchema.js";
+import registerSchema from '../schemas/registerSchema.js';
 
 function validateRegister (req,res,next) {
 
