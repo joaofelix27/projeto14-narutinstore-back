@@ -10,7 +10,6 @@ export async function productList(req, res) {
 }
 export async function chosenProduct(req, res) {
   const name = req.params.name;
-  console.log(name);
   try {
     const products = await db.collection("inventory").findOne({name});
     if (!products) {
