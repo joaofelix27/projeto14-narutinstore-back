@@ -10,10 +10,9 @@ export async function productList(req, res) {
 }
 export async function chosenProduct(req, res) {
   const name = req.params.name;
-  console.log(name);
   try {
-    const products = await db.collection("inventory").find({name}).toArray();
-    if (products.length === 0) {
+    const products = await db.collection("inventory").findOne({name});
+    if (!products) {
       return res.sendStatus(404);
     } else {
       res.status(200).send(products);
