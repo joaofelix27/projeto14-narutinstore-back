@@ -6,11 +6,11 @@ const registerSchema = joi.object({
       .pattern(/^[a-zA-Z\s]*$/)
       .required(), // Only accepts upper or lower case letters or blank spaces
       
-    email: joi.string().email().required(),
-    cpf: joi
-    .alphanum()
-    .required(),
-    password: joi.string().required(),
-  });
+//    email: joi.string().email().required(),
+//    cpf: joi
+//    .alphanum()
+//    .required(),
+//    password: joi.string().required(),
+});
 
 export default registerSchema;
