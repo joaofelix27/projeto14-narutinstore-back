@@ -12,7 +12,7 @@ export async function chosenProduct(req, res) {
   const name = req.params.name;
   console.log(name);
   try {
-    const products = await db.collection("inventory").find({name}).toArray();
+    const products = await db.collection("inventory").findOne({name})
     if (products.length === 0) {
       return res.sendStatus(404);
     } else {
