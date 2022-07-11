@@ -22,7 +22,6 @@ export async function chosenProduct(req, res) {
   }
 }
 export async function updateProducts(req, res) {
-  console.log(req.body)
   
   try {
     for ( let i = 0; i < req.body.length; i++) {
@@ -36,7 +35,6 @@ export async function updateProducts(req, res) {
           },
         }
       );
-      console.log(`${name}:`,newInventoryNumber)
     }
       res.sendStatus(200);
   } catch {
