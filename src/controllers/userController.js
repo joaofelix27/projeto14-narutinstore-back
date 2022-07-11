@@ -55,3 +55,11 @@ export async function loginUser(req, res) {
     res.sendStatus(500);
   }
 }
+
+export async function logOut(req, res){
+  const { authorization } = req.headers;
+  const token = authorization.replace('Bearer ', '');
+  const session=await db.collection("sessions").findOne({token: token});
+  db.collection("sessions").deleteOne(session);
+  res.sendStatus(200)
+}
