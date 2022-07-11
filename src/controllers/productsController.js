@@ -22,8 +22,9 @@ export async function chosenProduct(req, res) {
   }
 }
 export async function updateProducts(req, res) {
-  
+  const activeUser= res.locals.activeUser 
   try {
+    await db.collection("purchases").insertOne( {... req.body, userId: activeUser._id, email: activeUser.email })
     for ( let i = 0; i < req.body.length; i++) {
       const { name, quantity, quantityPurchased } = req.body[i];
       const newInventoryNumber = quantity - quantityPurchased;
